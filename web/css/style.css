@@ -1,0 +1,11 @@
+body{
+	background-color:#3ac967;
+}
+
+#mainContainer{
+	height:70vh;
+}
+
+#divModalCadastro{
+	overflow: scroll;
+}

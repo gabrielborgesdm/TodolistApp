@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-5 col-lg-4 mx-auto mt-md-3 bg-light rounded" >
+            <div class="row justify-content-between py-2" style="background-color:#58b99d">
+                <div class="col text-left mt-1">
+                    <a href="{{ path('homepage')}}" class="h2 text-light">Todolist</a>
+                </div>
+                <div class="col text-right mt-2">
+                    <a href="{{ path('login') }}" class="lead text-white ">Login</a>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                {{ form_start(registerForm, { 'attr' : { 'class' : 'col-12' }}) }}
+                {{ form_row(registerForm.username) }}
+                {{ form_row(registerForm.email) }}
+                {{ form_row(registerForm.name) }}
+                {{ form_row(registerForm.password.first, {'label': 'Password'}) }}
+                {{ form_row(registerForm.password.second, {'label': 'Repeat Password'}) }}
+                <input type="submit" id="loginSubmitButton" class="btn btn-outline-success col-12" value="Submit"/>
+                {{ form_end(registerForm) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+

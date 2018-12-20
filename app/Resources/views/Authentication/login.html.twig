@@ -1,0 +1,42 @@
+{% if error %}
+    {% set error = error.messageKey %}
+{% else %}
+    {% set username = "" %}
+{% endif %}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-5 col-lg-4 mx-auto mt-md-3 bg-light rounded" >
+            <div class="row justify-content-between py-2" style="background-color:#58b99d">
+                <div class="col text-left mt-1">
+                    <a href="{{ path('homepage')}}" class="h2 text-light">Todolist</a>
+                </div>
+                <div class="col text-right mt-2">
+                    <a href="{{ path('register') }}" class="lead text-white ">Register</a>
+                </div>
+            </div>
+
+            <div class="row mb-3" >
+                <form class="mx-auto col-12" id="loginForm" action="{{ path('login') }}" method="post">
+                    <p id="errorMsg" class="small text-danger text-danger">{{ error }}&nbsp;</p>
+
+                    <div class="form-group">
+                        <label for="email_login">Username or E-mail</label>
+                        <input type="text" class="form-control" value="{{ username }}" id="username" name="_username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password_login">Password</label>
+                        <input type="password" class="form-control" id="password" name="_password" required>
+                    </div>
+
+                    <input type="submit" id="loginSubmitButton" class="btn btn-outline-success mt-4 mb-1 col-12" value="Log in" />
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
