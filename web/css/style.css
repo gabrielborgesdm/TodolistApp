@@ -1,9 +1,18 @@
-body{
-	background-color:#3ac967;
+@media (max-width: 577px) {
+	#mainContainer{
+		height: 91.6vh !important;
+	}
+	body{
+		background-color: #f8f9fa;
+	}
 }
-
-#mainContainer{
-	height:70vh;
+@media (min-width: 768px) {
+	#mainContainer{
+		height:70vh !important;
+	}
+	body{
+		background-color:#3ac967;
+	}
 }
 
 #divModalCadastro{

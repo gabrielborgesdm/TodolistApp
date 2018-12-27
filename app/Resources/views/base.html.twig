@@ -2,22 +2,20 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}Todolist{% endblock %}</title>
         <script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
         {% block stylesheets %}
             <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css')}}">
-            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
             <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+            <link rel="icon" type="image/x-icon" href="{{ asset('img/todolist.png') }}" />
         {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('img/todolist.png') }}" />
     </head>
     <body>
         <section class="container-fluid">
             {% block body %}{% endblock %}     
         </section>
         {% block javascripts %}
-
-              <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
             <script type="text/javascript" src="{{ asset('js/mainScript.js') }}"></script>
         {% endblock %}

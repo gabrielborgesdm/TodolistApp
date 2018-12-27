@@ -14,7 +14,7 @@
 					</div>
 						{{ form_start(form) }}
 							<div class="modal-body">
-								<p  class="small text-danger" id="createError">&nbsp;</p>
+								<p class="small text-danger" id="createError">&nbsp;</p>
 								{{ form_widget(form) }}
 							</div>
 						{{ form_end(form) }}
@@ -23,9 +23,10 @@
 		</div>
 	</div>
 
-    <div class="row">
-        <div class="col-md-5 col-lg-4 mx-auto mt-md-3 bg-light rounded" >
-			<div class="row justify-content-between py-2" style="background-color:#58b99d">
+    <div class="row justify-content-center">
+        <div class="col-md-5 col-lg-4 mt-md-3 p-0 m-0 bg-white rounded">
+			<!-- Header -->
+			<div class="row px-0 mx-0 justify-content-between py-2" style="background-color:#58b99d">
 				<div class="col text-left">
 					<a href="{{ path('homepage')}}" class="h2 text-light">Todolist</a>
 				</div>
@@ -44,16 +45,17 @@
 				</div>
 			</div>
 
-			<div class="row mb-5" id="mainContainer">
+			<!-- body -->
+			<div class="row table-responsive mx-0 rounded-bottom" id="mainContainer">
 				{% if not is_granted('IS_AUTHENTICATED_FULLY') %}
 
-					<p class="mt-1 px-1 mx-auto lead">Click in the icon above to log in!</p>
+					<p class="mt-1 px-1 text-center lead">Click in the icon above to log in!</p>
 				{% elseif tasks is empty%}
 
-					<p class="mt-1 px-2 mx-auto lead">Welcome, click in the plus icon above to add some tasks!</p>
+					<p class="mt-1 px-2 text-center lead">Welcome, click in the plus icon above to add some tasks!</p>
 				{% else %}
 
-					<ul class=" col-12 list-group list-group-striped p-0 pb-5">
+					<ul class=" col-12 list-group list-group-striped px-0">
 						{% for task in tasks %}
 							<li class="list-group-item d-flex rounded-0">
 
@@ -61,7 +63,7 @@
 									<td>{{ task.description }}</td>
 								</div>
 
-								<div class="col-2 d-inline">
+								<div class="col-2 d-inline pb-1">
 								{% if task.completed == 1 %}
 									<img id="{{ task.id }}" class="imgCheck" width="36" src="{{ asset('img/checkIcon.png') }}">
 								{% else %}

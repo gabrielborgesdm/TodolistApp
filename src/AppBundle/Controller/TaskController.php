@@ -9,34 +9,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class TaskController extends Controller{
-    /**
-     * @Route("/create", name="create_task")
-     */
-    public function formBuilder(Request $request){
-
-        $task = new Tasks();
-
-        $form = $this->createForm(TaskType::class, $task);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $task = $form->getData();
-
-            $user = $this->getUser();
-            $id = $user->getId();
-            $task->setUser_id($id);
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($task);
-            $entityManager->flush();
-
-        }
-
-        return new Response();
-
-    }
-
 
     /**
      * @Route("/update/{id}/{condition}", name="update_task")

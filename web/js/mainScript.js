@@ -30,10 +30,15 @@ $("document").ready(function () {
             condition = 1;
             src = "/img/checkIcon.png";
         }
-        img.attr("src", "/img/loadingIcon.png");
+
+        var tamanho = img.height();
+
+        img.height(tamanho + 0.3);
+        img.attr("src", "/img/ajax-loader.gif");
         $.ajax({
             url: "/update/" + id + "/" + condition,
             success: function () {
+                img.height(tamanho);
                 img.attr("src", src);
             }
         });

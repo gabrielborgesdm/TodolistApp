@@ -22,7 +22,6 @@ class HomepageController extends Controller{
 
         $taskForm = $this->createForm(TaskType::class, $addTask);
 
-
         $taskForm->handleRequest($request);
 
         if ($taskForm->isSubmitted() && $taskForm->isValid()) {
@@ -37,7 +36,7 @@ class HomepageController extends Controller{
             $entityManager->persist($task);
             $entityManager->flush();
 
-            $this->redirectToRoute("homepage");
+            return $this->redirectToRoute("homepage");
         }
 
 
